@@ -1,0 +1,32 @@
+% --------------------------------------------------------------------------- %
+% Captions
+% --------------------------------------------------------------------------- %
+\captionsetup{
+    margin = 5pt,%
+    font = {color=spacecadet,small},%
+    labelfont = {sc, bf},%
+    textfont = it,%
+    labelsep = endash,%
+    belowskip = 0pt,
+}
+
+% --------------------------------------------------------------------------- %
+% Sections
+% --------------------------------------------------------------------------- %
+% requires titlesec package - color of section title text 
+\titleformat*{\section}{\Large\bfseries\sffamily\color{MSBlue}}
+\titleformat*{\subsection}{\large\bfseries\sffamily\color{MSLightBlue}}
+\titleformat*{\subsubsection}{\itshape\sffamily\color{MSLightBlue}}
+
+
+% --------------------------------------------------------------------------- %
+% URLs
+% --------------------------------------------------------------------------- %
+%% Define a new style for the url package to use a smaller font
+%% Taken from http://hex.lspace.org/leo/thesis/tips/url-formatting.html
+\makeatletter
+\def\url@fernanstyle{\def\UrlFont{\footnotesize\ttfamily}}
+\makeatother
+\urlstyle{fernan}
+
+

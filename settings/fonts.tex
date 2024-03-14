@@ -1,0 +1,68 @@
+% --------------------------------------------------------------------------- %
+% Fonts
+% --------------------------------------------------------------------------- %
+% place all fonts into their own './fonts' folder 
+
+% load fontspec
+\usepackage[no-math]{fontspec}
+
+% unicode-math
+% maps math markup into unicode characters provided by OpenType fonts
+% allows using unicode characters intercheangably with markup
+% e.g. \emptyset \not\in X  or ∅ ∉ X
+%\usepackage[%
+%    warnings-off={mathtools-colon,mathtools-overbracket},
+%    math-style=upright]{unicode-math}
+
+% the Garamond-Math font at this scale is the most similar
+% to the MinionPro font used for the text 
+%\setmathfont[Scale=0.95, Numbers={OldStyle,Proportional}]{Garamond-Math}
+
+% and this is the monospaced font for teletype text \tt
+%\usepackage{inconsolata}
+%\setmonofont[Scale=0.95]{Inconsolata}
+
+% mathspec 
+% use OpenType fonts within math
+% match text font of math environments with text font in the document
+\usepackage{mathspec}
+
+% declare fonts
+% opciones para numeros, kerning, ligatures
+% --- ver https://ctan.math.washington.edu/tex-archive/fonts/minionpro/MinionPro.pdf
+% --- ver https://ctan.dcc.uchile.cl/macros/unicodetex/latex/fontspec/fontspec.pdf
+% 
+% --- Numbers (fontspec.pdf page 43)
+% --- Upercase, Lowercase, Lining, OldStyle, Proportional, Monospaced, SlashedZero, Arabic
+% 
+% --- Ligatures (fontspec.pdf page 41)
+% --- se pueden definir de a una o varias separadas por comas
+% --- Required, Common, Contextual, Historic, Rare, TeX
+%
+
+\setmainfont{MinionPro}[%
+    Path = fonts/,
+    Numbers={OldStyle, Proportional},
+    Kerning=Uppercase,
+    Ligatures={Common},
+    Extension=.otf,
+    UprightFont=*-Regular,
+    ItalicFont=*-It,
+    BoldFont=*-Bold,
+    BoldItalicFont= *-BoldIt,
+    SizeFeatures = {
+        {Size = {5-8.4}, Font = *-Capt, Color = 220c10},
+        {Size = {8.4-13.0}, Font = *-Regular},
+        {Size = {13.1-19.9}, Font = *-Subh},
+        {Size = {20-}, Font = *-Disp},
+    },
+]
+
+\setsansfont{MyriadPro}[%
+    Path = fonts/,
+    Extension = .otf,
+    UprightFont = *-Regular,
+    ItalicFont = *-It,
+    BoldFont = *-Bold,
+    BoldItalicFont = *-BoldIt,
+]
