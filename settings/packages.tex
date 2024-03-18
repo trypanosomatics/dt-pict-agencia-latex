@@ -4,7 +4,7 @@
 \usepackage{footmisc}   % \footref
 \usepackage{longtable}  % to allow footnotes within tables
 \usepackage{multirow}   % allow cells spanning multiple columns/rows
-\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}  % colors
+\usepackage[dvipsnames,svgnames,table]{xcolor}  % colors
 \usepackage{titlesec}   % styling titles of sections
 \usepackage{colortbl}   % colors for table cells
 \usepackage{graphicx}	% Insert graphics
@@ -15,10 +15,6 @@
 \usepackage{pgfgantt}   % cronograma, timeline
 \usepackage{translator} % ?
 \usepackage[useregional]{datetime2}   % functions to work with date, time
-\usepackage{xstring}	% Git commit data
-\usepackage{catchfile}	% Git commit data
-\usepackage{lastpage}	% Calculate total number of pages
-% Usage example: calculate total number of pages, from current page to last page
-%\newcommand{\totalpages}{\the\numexpr(\getpagerefnumber{LastPage})-\value{page}}
-% where \value{page} is the page number for the current page
-
+\usepackage{xstring}	% extract Git commit data
+\usepackage{catchfile}	% extract Git commit data
+\usepackage{float}      % improved definitions of floating objects (figures, tables)

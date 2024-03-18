@@ -5,12 +5,6 @@
 \vspace{24pt}
 \ttfamily
 \noindent Archivo: \jobname.pdf \\
-Tamaño del archivo: \the\numexpr(\filesize{\PICTFile}/1024)K \\
-Revisión Git: \texttt{\commit}(\texttt{\branch})\\
-Longitud del archivo: \the\numexpr\value{page}~páginas \\
-
-%Descripción Técnica:
-%\the\numexpr\getpagerefnumber{LastPage}-\value{page}\relax~páginas (excluyendo
-%carátula + índice) \\
-
-
+Tamaño del archivo: \the\numexpr(\filesize{\jobname.xdv}/1024)K \\
+Revisión Git: \texttt{\gitrevision}~(\texttt{\branch})\\
+Longitud del archivo: \the\numexpr\value{page}~páginas%

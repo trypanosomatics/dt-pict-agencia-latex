@@ -6,5 +6,7 @@
 \StrBehind[2]{\head}{/}[\branch]
 \IfFileExists{.git/refs/heads/\branch.}{%
     \CatchFileDef{\commit}{.git/refs/heads/\branch.}{}}{%
-    \newcommand{\commit}{\dots~(in \emph{packed-refs})}}
-
+    \newcommand{\commit}{\dots~(in \emph{packed-refs})}%
+    }
+% \gitrevision = short commit hash string
+\StrLeft{\commit}{7}[\gitrevision]
