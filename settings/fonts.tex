@@ -1,44 +1,147 @@
 % --------------------------------------------------------------------------- %
 % Fonts
 % --------------------------------------------------------------------------- %
-% place all fonts into their own './fonts' folder 
+% if using commercial fonts, place all fonts into their own './fonts' folder 
+% .gitignore is already set to avoid uploading fonts to public repos
 
-% load fontspec
-%\usepackage[no-math]{fontspec} % not required as mathspec will load fontspec anyway 
-% see https://tex.stackexchange.com/questions/359704/fontspec-mathspec-clash
+% --------------------------------------------------------------------------- %
+% Option 0: No selection of fonts whatsoever
+% --------------------------------------------------------------------------- %
+% You will get Computer Modern fonts. 
+% --------------------------------------------------------------------------- %
 
-% unicode-math
-% maps math markup into unicode characters provided by OpenType fonts
-% allows using unicode characters intercheangably with markup
-% e.g. \emptyset \not\in X  or ∅ ∉ X
-%\usepackage[%
-%    warnings-off={mathtools-colon,mathtools-overbracket},
-%    math-style=upright]{unicode-math}
+% --------------------------------------------------------------------------- %
+% OPTION 1: Stix + Liberation Sans + Inconsolata
+% --------------------------------------------------------------------------- %
+% https://www.lfe.pt/latex/fonts/typography/2022/11/21/latex-fonts-part1.html
+% https://github.com/linoferreira/latex-font-survey/blob/master/stix/lualatex/stix-two.tex
+% \usepackage[cm-default]{fontspec}
+% \usepackage{microtype}
+% \usepackage{mathtools,amssymb}
+% \usepackage{unicode-math}
+% \usepackage{inconsolata}
 
-% the Garamond-Math font at this scale is the most similar
-% to the MinionPro font used for the text 
-%\setmathfont[Scale=0.95, Numbers={OldStyle,Proportional}]{Garamond-Math}
+% % Serif font: STIX Two (https://www.stixfonts.org)
+% \setmainfont[Numbers=OldStyle]{STIX Two Text}
+% % Math font: STIX Two Math
+% \setmathfont{STIX Two Math}
+% % Sans-serif font: Libertinus Sans
+% \setsansfont[Numbers=OldStyle]{Libertinus Sans}
+% % Monospaced font: Inconsolata (https://www.ctan.org/pkg/inconsolata)
+% \setmonofont{inconsolata}
+% END OPTION 1
+% --------------------------------------------------------------------------- %
 
-% and this is the monospaced font for teletype text \tt
-%\usepackage{inconsolata}
-%\setmonofont[Scale=0.95]{Inconsolata}
 
-% mathspec 
-% use OpenType fonts within math
-% match text font of math environments with text font in the document
-\usepackage{mathspec}
+% --------------------------------------------------------------------------- %
+% OPTION 2: TeX Gyre Pagella + Source Sans Pro + TeX Gyre Cursor
+% --------------------------------------------------------------------------- %
+% https://www.lfe.pt/latex/fonts/typography/2022/11/21/latex-fonts-part1.html
+% https://tug.org/FontCatalogue/texgyrepagella
+% https://tug.org/FontCatalogue/texgyrecursor/
+%\usepackage{fontspec}
+%\usepackage{amsfonts}
+% Serif Font: TeX Gyre Pagella
+%\usepackage{tgpagella}
+%\setmainfont{TeX Gyre Pagella}
+% Sans Serif Font: Source Sans Pro
+%\usepackage{sourcesanspro}
+%\setsansfont{Source Sans Pro}
+% Math Font:
+% Monospaced Font: 
+%\usepackage{tgcursor}
+%\setmonofont{TeX Gyre Cursor}
+% --------------------------------------------------------------------------- %
+
+
+
+% --------------------------------------------------------------------------- %
+% OPTION 3: EB Garamond + Source Sans Pro + Garamond Math + New CM Mono
+% --------------------------------------------------------------------------- %
+% https://www.lfe.pt/latex/fonts/typography/2022/11/21/latex-fonts-part1.html
+ \usepackage{fontspec}
+% % Serif Font: 
+\setmainfont[Numbers=OldStyle]{EB Garamond} 
+
+% % Sans Serif Font: Source Sans Pro
+\usepackage{sourcesanspro}
+\setsansfont{Source Sans Pro}
+
+% % Math Font
+\usepackage[math-style=ISO, bold-style=ISO]{unicode-math}
+\setmathfont{Garamond-Math.otf}[StylisticSet={6,7,9}]
+
+% % Monospaced Font
+\usepackage{unicode-math}
+\setmonofont[ItalicFont=NewCMMono10-Italic.otf,%
+    BoldFont=NewCMMono10-Bold.otf,%
+    BoldItalicFont=NewCMMono10-BoldOblique.otf,%
+    SmallCapsFeatures={Numbers=OldStyle}]{NewCMMono10-Regular.otf}
+% --------------------------------------------------------------------------- %
+
+
+% --------------------------------------------------------------------------- %
+% OPTION 4: Libertinus + Inconsolata
+% --------------------------------------------------------------------------- %
+% https://www.lfe.pt/latex/fonts/typography/2022/11/21/latex-fonts-part1.html
+%https://github.com/linoferreira/latex-font-survey/blob/master/libertine/lualatex/libertinus.tex
+% \usepackage{fontspec}
+% \usepackage{microtype}
+% \usepackage{mathtools,amssymb}
+% \usepackage{unicode-math}
+% \usepackage{xcolor}
+
+% % Serif font: Libertinus Serif (https://github.com/alif-type/libertinus)
+% \setmainfont[Numbers=OldStyle]{Libertinus Serif}
+% % Math font: Libertinus Math
+% \setmathfont[AutoFakeBold]{Libertinus Math}
+% % Sans-serif font: Libertinus Sans
+% \setsansfont[Numbers=OldStyle]{Libertinus Sans}
+% % Monospaced font: Inconsolata (https://www.ctan.org/pkg/inconsolata)
+% \fontspec{inconsolata}
+% % Display font: Libertinus Serif Display
+% \newfontfamily\dispfont{Libertinus Serif Display}
+% --------------------------------------------------------------------------- %
+
+
+% --------------------------------------------------------------------------- %
+% OPTION 4: Minion Pro + Myriad Pro (commercial)
+% 
+% --------------------------------------------------------------------------- %
+%
+% Move all *otf fonts into the fonts folder
+% 
+% load fontspec (not required if you use mathspec, it will load fontspec anyway)
+% \usepackage[no-math]{fontspec}
+% % see https://tex.stackexchange.com/questions/359704/fontspec-mathspec-clash
+
+% % unicode-math
+% % maps math markup into unicode characters provided by OpenType fonts
+% % allows using unicode characters intercheangably with markup
+% % e.g. \emptyset \not\in X  or ∅ ∉ X
+% \usepackage[%
+%     warnings-off={mathtools-colon,mathtools-overbracket},
+%     math-style=upright]{unicode-math}
+
+% % the Garamond-Math font at this scale is the most similar
+% % to the MinionPro font used for the text 
+% \setmathfont[Scale=0.95, Numbers={OldStyle,Proportional}]{Garamond-Math}
+
+% % Monospaced font: Inconsolata
+% \usepackage{inconsolata}
+% \setmonofont[Scale=0.95]{inconsolata}
 
 % declare fonts
 % opciones para numeros, kerning, ligatures
-% --- ver https://ctan.math.washington.edu/tex-archive/fonts/minionpro/MinionPro.pdf
-% --- ver https://ctan.dcc.uchile.cl/macros/unicodetex/latex/fontspec/fontspec.pdf
+% -- ver https://ctan.math.washington.edu/tex-archive/fonts/minionpro/MinionPro.pdf
+% -- ver https://ctan.dcc.uchile.cl/macros/unicodetex/latex/fontspec/fontspec.pdf
 % 
-% --- Numbers (fontspec.pdf page 43)
-% --- Upercase, Lowercase, Lining, OldStyle, Proportional, Monospaced, SlashedZero, Arabic
+% -- Numbers (fontspec.pdf page 43)
+% -- Upercase, Lowercase, Lining, OldStyle, Proportional, Monospaced, SlashedZero, Arabic
 % 
-% --- Ligatures (fontspec.pdf page 41)
-% --- se pueden definir de a una o varias separadas por comas
-% --- Required, Common, Contextual, Historic, Rare, TeX
+% -- Ligatures (fontspec.pdf page 41)
+% -- se pueden definir de a una o varias separadas por comas
+% -- Required, Common, Contextual, Historic, Rare, TeX
 %
 
 % \setmainfont{MinionPro}[%
@@ -49,7 +152,7 @@
 %     Extension=.otf,
 %     UprightFont=*-Regular,
 %     ItalicFont=*-It,
-%     BoldFont=*-Bold,
+%      BoldFont=*-Bold,
 %     BoldItalicFont= *-BoldIt,
 %     SizeFeatures = {
 %         {Size = {5-8.4}, Font = *-Capt, Color = 220c10},
